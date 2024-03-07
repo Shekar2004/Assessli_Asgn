@@ -1,7 +1,7 @@
-import Image from "next/image";
+"use client";
+
 import styles from "./page.module.css";
 import ContactCard from "../components/ContactCard";
-
 
 export default function Home() {
   return (
