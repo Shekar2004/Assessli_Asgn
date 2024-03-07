@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Assessli Contact Page Assessment
+---
+Name: Pola Gnana Shekar
+Roll No: 21CS10052
+Phone No: 8074662088
+Email: gnanashekar2004@gmail.com
 
 ## Getting Started
 
-First, run the development server:
+First, install all dependencies:
+```bash
+npm install
+# or
+npm i
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +28,20 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can see a contact page with Fields: Name, Email, Phone, Message.
+Enter your details and click submit.
+On successful submission the form resets to empty form.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The data is sent to Google Sheet, which acts as storage for the contact page data.
 
-## Learn More
+You can see the data in the google sheet:
+[https://docs.google.com/spreadsheets/d/16gduKs7Xo86Uen5n5nWMbO3tu9FExhUPzRr0J48wqrY/edit?usp=sharing](https://docs.google.com/spreadsheets/d/16gduKs7Xo86Uen5n5nWMbO3tu9FExhUPzRr0J48wqrY/edit?usp=sharing) .
 
-To learn more about Next.js, take a look at the following resources:
+## Features
+- The project is made Responsive - to adapt to various screen sizes.
+- Proper Validation is also ensured using Formik and Yup.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The Vercel Link where this project is deployed:
