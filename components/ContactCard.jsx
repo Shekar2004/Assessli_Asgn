@@ -1,11 +1,12 @@
-"use client";
-
-import React, { useState } from "react";
+// Importing necessary modules and styles
+import React from "react";
 import styles from "./ContactCard.module.css";
 import { useFormik } from "formik";
 import { contactSchema } from "./schemas";
 
+// ContactCard functional component
 function ContactCard() {
+    // Initial form values
     const initialValues = {
         Name: "",
         Email: "",
@@ -13,18 +14,21 @@ function ContactCard() {
         Message: "",
     }
 
+    // Formik hook to handle form state and validation
     const { values, handleBlur, handleChange, handleSubmit, errors, touched } = useFormik({
         initialValues,
         validationSchema: contactSchema,
         validateOnChange: true,
         validateOnBlur: false,
         onSubmit: (values, action) => {
+            // Creating a new FormData object to send form data
             const formData = new FormData();
             formData.append("Name", values.Name);
             formData.append("Email", values.Email);
             formData.append("Phone",values.Phone);
             formData.append("Message", values.Message);
       
+            // Fetching data to Google Sheet API
             fetch(
               "https://script.google.com/macros/s/AKfycbwNV9l4_fYFV6Tv9vKSl5eXzHbPgUYmw1q-3n2gj_TO5ADcrTRKVFFz8F_1Wi4FaZEJBw/exec",
               {
@@ -54,6 +58,7 @@ function ContactCard() {
           <span className={styles.titleGet}>Get</span> in Touch.
         </p>
         <div className={styles.inputs}>
+          {/* Input fields for Name, Email, Phone, and Message */}
           <input
             value={values.Name}
             type="text"
@@ -64,11 +69,13 @@ function ContactCard() {
             onChange={handleChange}
             onBlur={handleBlur}
           />
+          {/* Displaying error message for Name field if touched and has error */}
           {
             touched.Name && errors.Name ? (
                 <p className={styles.formError}>{errors.Name}</p>
             ): null
           }
+          {/* Other input fields follow the same pattern */}
           <input
             value={values.Email}
             type="text"
@@ -114,6 +121,7 @@ function ContactCard() {
             ): null
           }
         </div>
+        {/* Submit button */}
         <div className={styles.buttonBox}>
           <button type="submit" className={styles.button}>SUBMIT</button>
         </div>
@@ -122,6 +130,5 @@ function ContactCard() {
   );
 }
 
+// Exporting the ContactCard component
 export default ContactCard;
-
-// https://script.google.com/macros/s/AKfycbwNV9l4_fYFV6Tv9vKSl5eXzHbPgUYmw1q-3n2gj_TO5ADcrTRKVFFz8F_1Wi4FaZEJBw/exec
